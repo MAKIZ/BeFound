@@ -1,1 +1,11 @@
 <h1>Welcome This is the Post Index page</h1>
+<% @posts.each do |post| %>
+    <p><%= post.name %></p>
+    <p><%= post.photo %></p>
+    <p><%= post.last_contact_date %></p>
+    <p><%= post.sex %></p>
+    <p><%= post.sex %></p>
+    <p><%= link_to  "more info", post %></p>
+    <p>posted <%= time_ago_in_words(post.created_at) %> ago</p>
+    <hr>
+<% end %>
