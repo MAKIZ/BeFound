@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+  end
+
+  def show
   end
 
   def new
-    @post = Post.new
   end
 
   def create
@@ -12,6 +13,8 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_to @post, notice: "Post Created!"
+    else
+      render "new"
     end
   end
 
