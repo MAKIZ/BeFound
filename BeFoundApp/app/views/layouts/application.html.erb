@@ -22,10 +22,15 @@
       <% if flash[:error].present? %>
         <div class="errors">
           <b>Errors:</b>
-  
           <%= flash[:error] %>
         </div>
       <% end %>
+
+      <p>BeFound</p>
+      <p>User Login</p>
+      <p>User Logout</p>
+      <p>Create Account</p>
+      <p><%= link_to "add post",new_post_path %></p>
 
   <body>
     <%= yield %>

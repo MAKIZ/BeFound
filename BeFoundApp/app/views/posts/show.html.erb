@@ -6,4 +6,6 @@
 <p><%= @post.complexion %></p><br>
 <p><%= @post.description %></p>
 <p>posted <%= time_ago_in_words(@post.created_at) %> ago</p>
+<p><%= link_to "edit", edit_post_path(@post) %></p>
+<p><%= link_to "delete", post_path(@post), method: :delete %></p>
 
