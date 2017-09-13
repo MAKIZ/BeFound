@@ -1,11 +1,37 @@
-<h1>Welcome This is the Post Index page</h1>
-<% @posts.each do |post| %>
-    <p><%= post.name %></p>
-    <p><%= post.photo %></p>
-    <p><%= post.last_contact_date %></p>
-    <p><%= post.sex %></p>
-    <p><%= post.sex %></p>
-    <p><%= link_to  "more info", post %></p>
-    <p>posted <%= time_ago_in_words(post.created_at) %> ago</p>
-    <hr>
-<% end %>
+<header class="jumbotron my-5 text-center">
+  <h1 class="display-2">HAVE YOU SEEN ME?</h1>
+  <p class="lead">Listed below are some of the missing persons currently reported in the State of New Assembly. To see more information on
+    each missing person, click on More Info. If you have a tip or would like to add a case to the web site.</p>
+  <p>call the New Assembly State Police:</p>
+  <p>Missing Persons Unit at #212-832-9870, extension x24</p>
+</header>
+
+<div class="container">
+  <% @posts.each do |post| %>
+    <div class="row">
+      <div class="col-md-7">
+        <a>
+        <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="photo will goes here">
+      </a>
+      </div>
+      <div class="col-md-5">
+        <h3>
+          <%= post.name %>
+        </h3>
+        <p>
+          <%= post.last_contact_date %>
+        </p>
+        <p>
+          <%= post.sex %>
+        </p>
+        <br>
+        <p>
+          <%= link_to  "more info", post, class: "btn btn-primary" %>
+        </p>
+        <small>posted <%= time_ago_in_words(post.created_at) %> ago</small>
+      </div>
+    </div>
+    <br>
+    <hr><br>
+    <% end %>
+</div>

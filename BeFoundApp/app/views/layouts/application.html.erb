@@ -7,13 +7,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <body>
+
     <%= render "layouts/nav" %>
-  
+      
       <% if current_user %>
         <%= link_to current_user.username, user_path(current_user) %> signed in
         <%= button_to 'Log out', session_path, method: :delete %>
       <% end %>
-  
+      
       <% if flash[:notice].present? %>
         <div class="notice">
           <%= flash[:notice] %>
@@ -27,13 +29,9 @@
         </div>
       <% end %>
 
-      <p>BeFound</p>
-      <p>User Login</p>
-      <p>User Logout</p>
-      <p>Create Account</p>
-      <p><%= link_to "add post",new_post_path %></p>
-
-  <body>
     <%= yield %>
+
+    <%= render "layouts/footer" %>
+
   </body>
 </html>

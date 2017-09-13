@@ -12,4 +12,30 @@
  *
  */
 
- @import "bootstrap";
+@import "bootstrap";
+
+.text-center {
+  text-align: center;
+}
+
+body {
+    padding-top: 3rem;
+}
+
+.navbar {
+    background-color: #ffffff;;
+ }
+
+.jumbotron{
+    background-color: #FFFFFF;
+    /*background-color:none !important;*/
+    }
+
+button:active,
+.button:active,
+button:focus,
+.button:focus,
+button:hover,
+.button:hover {
+  outline: none !important;
+}

@@ -1,11 +1,33 @@
-<p><%= @post.name %></p><br>
-<p><%= @post.photo %></p><br>
-<p><%= @post.last_contact_date %></p><br>
-<p><%= @post.sex %></p><br>
-<p><%= @post.dob %></p><br>
-<p><%= @post.complexion %></p><br>
-<p><%= @post.description %></p>
-<p>posted <%= time_ago_in_words(@post.created_at) %> ago</p>
-<p><%= link_to "edit", edit_post_path(@post) %></p>
-<p><%= link_to "delete", post_path(@post), method: :delete %></p>
+<br><br><br>
+<div class="container">
+  <h1>
+    <%= @post.name %>
+  </h1>
+  <p>
+    <%= @post.photo %>
+  </p>
+  <p>
+    <%= @post.last_contact_date %>
+  </p>
+  <p>
+    <%= @post.sex %>
+  </p>
+  <p>
+    <%= @post.dob %>
+  </p>
+  <p>
+    <%= @post.complexion %>
+  </p>
+  <p>
+    <%= @post.description %>
+  </p>
+  <p>posted
+    <%= time_ago_in_words(@post.created_at) %> ago</p>
+  <p>
 
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <%= link_to "edit", edit_post_path(@post), class: "btn btn-primary btn-sm" %>
+    <%= link_to "delete", post_path(@post), method: :delete, class: "btn btn-danger btn-sm" %>
+  </div>
+
+</div>
