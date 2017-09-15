@@ -17,14 +17,21 @@ ActiveRecord::Schema.define(version: 20170912005758) do
 
   create_table "posts", force: :cascade do |t|
     t.string "name"
-    t.string "photo"
-    t.string "last_contact_date"
+    t.string "missing_from"
+    t.date "date_missing"
     t.string "sex"
-    t.string "dob"
-    t.string "complexion"
-    t.text "description"
+    t.string "ethnicity"
+    t.date "dob"
+    t.integer "height"
+    t.integer "weight"
+    t.string "eyes"
+    t.string "hair"
+    t.text "other"
+    t.string "photo"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

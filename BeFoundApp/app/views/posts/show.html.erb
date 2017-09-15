@@ -1,29 +1,19 @@
-<br><br><br>
-<div class="container">
-  <h1>
-    <%= @post.name %>
-  </h1>
-  <p>
-    <%= @post.photo %>
-  </p>
-  <p>
-    <%= @post.last_contact_date %>
-  </p>
-  <p>
-    <%= @post.sex %>
-  </p>
-  <p>
-    <%= @post.dob %>
-  </p>
-  <p>
-    <%= @post.complexion %>
-  </p>
-  <p>
-    <%= @post.description %>
-  </p>
-  <p>posted
-    <%= time_ago_in_words(@post.created_at) %> ago</p>
-  <p>
+<%= render "layouts/nav_user" %>
+<div class="container pt-4">
+  <h1><%= @post.name %></h1>
+  <p><%= @post.photo %></p>
+  <p><%= @post.missing_from %></p>
+  <p><%= @post.date_missing %></p>
+  <p><%= @post.dob %></p>
+  <p><%= @post.sex %></p>
+  <p><%= @post.ethnicity %></p>
+  <p><%= @post.height %></p>
+  <p><%= @post.weight %></p>
+  <p><%= @post.eyes %></p>
+  <p><%= @post.hair %></p>
+  <p><%= @post.photo %></p>
+  <p><%= @post.other %></p>
+  <small>posted <%= time_ago_in_words(@post.created_at) %> ago</small><br><br>
 
   <div class="btn-group" role="group" aria-label="Basic example">
     <%= link_to "edit", edit_post_path(@post), class: "btn btn-primary btn-sm" %>
