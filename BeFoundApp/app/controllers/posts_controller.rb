@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :check_user, only: [:show, :edit, :update, :destroy]
+
   def index
     @posts = Post.all.order("created_at DESC")
   end
@@ -46,10 +48,38 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:name,
                                  :photo,
-                                 :last_contact_date,
+                                 :missing_from,
+                                 :date_missing,
                                  :sex,
+                                 :ethnicity,
                                  :dob,
-                                 :complexion,
-                                 :description)
+                                 :height,
+                                 :weight,
+                                 :eyes,
+                                 :hair,
+                                 :other,
+                                 :photo)
+  end
+
+  def update_params
+    params.require(:post).permit(:name,
+                                 :photo,
+                                 :missing_from,
+                                 :date_missing,
+                                 :sex,
+                                 :ethnicity,
+                                 :dob,
+                                 :height,
+                                 :weight,
+                                 :eyes,
+                                 :hair,
+                                 :other,
+                                 :photo)
+  end
+
+  def check_user
+    unless current_user == @posts.user
+      redirect_to root_path
+    end
   end
 end
